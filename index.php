@@ -1,8 +1,24 @@
 <?php
 
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$app = AppFactory::create();
+
+$app->get('/', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world!");
+    return $response;
+});
+
+$app->run();
+
+
+exit;
 require_once 'includes/common.inc.php';
 global $redis, $config, $csrfToken, $server;
-
 if($redis) {
 
     if (!empty($server['keys'])) {
@@ -273,6 +289,6 @@ if ($databases > 1) { ?>
 
 <?php
 
-require 'includes/footer.inc.php';
+// require 'includes/footer.inc.php';
 
 ?>

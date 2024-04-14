@@ -16,7 +16,9 @@
         "ext-mbstring": "*",
         "ext-json": "*",
         "predis/predis": "v1.1.9",
-        "paragonie/random_compat": ">=2"
+        "paragonie/random_compat": ">=2",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6"
     },
     "minimum-stability": "stable",
     "target-dir": "ErikDubbelboer/phpRedisAdmin"
